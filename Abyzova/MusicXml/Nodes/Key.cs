@@ -5,7 +5,7 @@ namespace Abyzova.MusicXml.Nodes;
 public readonly record struct Key
 {
     [XmlElement("fifths")]
-    public required uint Fifths { get; init; }
+    public required short Fifths { get; init; }
 
     [XmlElement("mode")]
     public required Mode Mode { get; init; }
