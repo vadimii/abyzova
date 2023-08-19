@@ -12,4 +12,7 @@ public readonly record struct Note
 
     [XmlElement("notations")]
     public required Notations Notations { get; init; }
+
+    [XmlElement("chord")]
+    public Chord? Chord { get; init; }
 }

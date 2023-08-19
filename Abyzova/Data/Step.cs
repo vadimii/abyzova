@@ -1,4 +1,4 @@
-﻿namespace Abyzova.Model;
+﻿namespace Abyzova.Data;
 
 public enum Step
 {

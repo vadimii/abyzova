@@ -10,7 +10,7 @@ public class ParserTests
     [Test]
     public void Parser_Serialization_ShouldNotThrow()
     {
-        var content = ScoreResource.Get("Abyzova-032-049.xml", typeof(Parser).Assembly);
+        var content = ScoreResource.Get("Abyzova-032-049.xml", typeof(ConnectionParser).Assembly);
 
         var actual = content.Parts
             .SelectMany(x => x.Measures)

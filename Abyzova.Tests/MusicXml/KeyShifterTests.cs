@@ -2,7 +2,7 @@
 using Abyzova.MusicXml.Nodes;
 using AutoFixture;
 using FluentAssertions;
-using ModelStep = Abyzova.Model.Step;
+using ModelStep = Abyzova.Data.Step;
 
 namespace Abyzova.Tests.MusicXml;
 

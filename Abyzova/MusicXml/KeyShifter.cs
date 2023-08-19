@@ -19,11 +19,11 @@ public class KeyShifter
         _notes = ShiftNotes(key);
     }
 
-    public Abyzova.Model.Step Step(Step step)
+    public Data.Step Step(Step step)
     {
         var i = _notes.IndexOf(step.ToString()[0]);
 
-        return (Abyzova.Model.Step)(i + 1);
+        return (Data.Step)(i + 1);
     }
 
     private static string ShiftNotes(Key key)
