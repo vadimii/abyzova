@@ -5,6 +5,6 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <EmbeddedResource Include="Data\Abyzova-032-049.xml"/>
+        <EmbeddedResource Include="Resources\Abyzova-032-049.xml" />
     </ItemGroup>
 </Project>

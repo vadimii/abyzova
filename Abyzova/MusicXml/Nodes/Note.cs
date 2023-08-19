@@ -9,4 +9,7 @@ public readonly record struct Note
 
     [XmlElement("duration")]
     public required uint Duration { get; init; }
+
+    [XmlElement("notations")]
+    public required Notations Notations { get; init; }
 }
