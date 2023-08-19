@@ -8,7 +8,7 @@ public readonly record struct Note
     public required Pitch Pitch { get; init; }
 
     [XmlElement("duration")]
-    public required uint Duration { get; init; }
+    public required int Duration { get; init; }
 
     [XmlElement("notations")]
     public required Notations Notations { get; init; }

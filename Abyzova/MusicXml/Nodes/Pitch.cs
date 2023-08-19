@@ -8,5 +8,5 @@ public readonly record struct Pitch
     public required Step Step { get; init; }
 
     [XmlElement("octave")]
-    public required uint Octave { get; init; }
+    public required int Octave { get; init; }
 }

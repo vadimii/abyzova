@@ -35,7 +35,7 @@ public class MeasureSplitter
                     yield return new Group(id, group.ToArray());
                 }
 
-                id = id with { Caesure = (ushort)(id.Caesure + 1) };
+                id = id with { Caesura = (ushort)(id.Caesura + 1) };
                 group = new List<Measure>();
             }
 
@@ -48,7 +48,7 @@ public class MeasureSplitter
         }
     }
 
-    public readonly record struct Id(string Rehearsal, ushort Caesure = 0);
+    public readonly record struct Id(string Rehearsal, int Caesura = 0);
 
     public readonly record struct Group(Id Id, Measure[] Measures);
 }

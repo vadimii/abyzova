@@ -15,7 +15,7 @@ public class MeasureSplitterTests
         var actual = splitter.Split(resource.Parts[0].Measures).ToArray();
 
         actual.Should().HaveCount(11);
-        actual.Where(x => x.Id.Rehearsal == "6").Select(x => x.Id.Caesure).Should().BeEquivalentTo(new[] { 0, 1 });
+        actual.Where(x => x.Id.Rehearsal == "6").Select(x => x.Id.Caesura).Should().BeEquivalentTo(new[] { 0, 1 });
         actual.SelectMany(x => x.Measures).Should().HaveCount(73);
     }
 }

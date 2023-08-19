@@ -5,7 +5,7 @@ namespace Abyzova.MusicXml.Nodes;
 public readonly record struct Measure
 {
     [XmlAttribute("number")]
-    public required uint Number { get; init; }
+    public required int Number { get; init; }
 
     [XmlElement("attributes")]
     public Attributes? Attributes { get; init; }

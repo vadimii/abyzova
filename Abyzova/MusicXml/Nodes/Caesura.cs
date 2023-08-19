@@ -1,3 +1,3 @@
 ﻿namespace Abyzova.MusicXml.Nodes;
 
-public readonly record struct Caesura();
+public readonly record struct Caesura;

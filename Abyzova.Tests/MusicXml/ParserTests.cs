@@ -1,6 +1,4 @@
-﻿using System.Xml;
-using System.Xml.Serialization;
-using Abyzova.MusicXml;
+﻿using Abyzova.MusicXml;
 using Abyzova.MusicXml.Nodes;
 using FluentAssertions;
 
@@ -9,8 +7,6 @@ namespace Abyzova.Tests.MusicXml;
 [TestFixture]
 public class ParserTests
 {
-
-
     [Test]
     public void Parser_Serialization_ShouldNotThrow()
     {
