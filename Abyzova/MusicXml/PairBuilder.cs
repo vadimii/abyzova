@@ -1,6 +1,4 @@
-﻿using Abyzova.Data;
-using Abyzova.Data.Connection;
-using Abyzova.MusicXml.Nodes;
+﻿using Abyzova.Data.Connection;
 using Chord = Abyzova.Data.Chord;
 
 namespace Abyzova.MusicXml;
@@ -14,11 +12,11 @@ public class PairBuilder
         _chordComposer = chordComposer;
     }
 
-    public IEnumerable<Pair> Build(Part[] parts)
+    public IEnumerable<Pair> Build(IEnumerable<MeasureParts> parts)
     {
-        foreach (var (first, second) in Zip(_chordComposer.Build(MeasureParts.Create(parts))))
+        foreach (var (first, second) in Zip(_chordComposer.Build(parts)))
         {
-            yield return new Pair(first, new Move());
+            yield return new Pair(first, Chord.Diff(first, second));
         }
     }
 

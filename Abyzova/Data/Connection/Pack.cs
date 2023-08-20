@@ -1,6 +1,8 @@
-﻿namespace Abyzova.Model;
+﻿using Abyzova.MusicXml.Preprocess;
 
-public class Pack
+namespace Abyzova.Data.Connection;
+
+public readonly record struct Pack(string Name, Type[] Preprocess)
 {
-    public const string Main = "Abyzova-032-049.xml";
+    public static readonly Pack Main = new Pack("Abyzova-032-049.xml", new[] { typeof(DoubleBass) });
 }
