@@ -18,6 +18,6 @@ public class ChordComposerTests
 
         var actual = composer.Build(parts).ToList();
 
-        actual.Should().HaveCount(124);
+        actual.Should().HaveCount(164);
     }
 }

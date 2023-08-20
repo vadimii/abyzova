@@ -13,6 +13,6 @@ public readonly record struct Chord(Pitch S, Pitch A, Pitch T, Pitch B)
 
     public Harm Harm()
     {
-        return new Harm(S.Step, A.Step, T.Step, B.Step);
+        return new Harm((int)S.Step, (int)A.Step, (int)T.Step, (int)B.Step);
     }
 }

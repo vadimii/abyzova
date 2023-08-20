@@ -8,6 +8,7 @@ public class MeasureSplitter
     {
         var id = new Id();
         var group = new List<MeasureParts>();
+        var prevCaesura = false;
 
         foreach (var measure in measures)
         {
@@ -28,7 +29,7 @@ public class MeasureSplitter
                 group = new List<MeasureParts>();
             }
 
-            if (caesura.HasValue)
+            if (prevCaesura)
             {
                 if (group.Count > 0)
                 {
@@ -40,6 +41,7 @@ public class MeasureSplitter
             }
 
             group.Add(measure);
+            prevCaesura = caesura.HasValue;
         }
 
         if (group.Count > 0)

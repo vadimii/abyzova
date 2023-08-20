@@ -65,7 +65,7 @@ public class ChordComposer
 
         Data.Pitch Convert(Pitch pitch)
         {
-            return new Data.Pitch(_shifter.Step(pitch.Step), pitch.Octave);
+            return _shifter.Step(pitch);
         }
     }
 

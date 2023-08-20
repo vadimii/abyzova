@@ -18,6 +18,6 @@ public class ParserTests
             .OfType<Note>()
             .Sum(x => x.Duration);
 
-        actual.Should().Be(152832);
+        actual.Should().Be(187392);
     }
 }

@@ -19,11 +19,15 @@ public class KeyShifter
         _notes = ShiftNotes(key);
     }
 
-    public Data.Step Step(Step step)
+    public Data.Pitch Step(Pitch pitch)
     {
-        var i = _notes.IndexOf(step.ToString()[0]);
+        var key = pitch.Step.ToString()[0];
+        var n = _notes.IndexOf(key);
+        var p = Notes.IndexOf(key);
+        var step = (Data.Step)(n + 1);
+        var octave = p < n ? pitch.Octave - 1 : pitch.Octave;
 
-        return (Data.Step)(i + 1);
+        return new Data.Pitch(step, octave);
     }
 
     private static string ShiftNotes(Key key)

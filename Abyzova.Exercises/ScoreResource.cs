@@ -2,7 +2,7 @@
 using System.Xml.Serialization;
 using Abyzova.MusicXml.Nodes;
 
-namespace Abyzova.MusicXml;
+namespace Abyzova.Exercises;
 
 internal static class ScoreResource
 {

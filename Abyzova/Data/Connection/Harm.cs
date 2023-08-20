@@ -1,3 +1,3 @@
 ﻿namespace Abyzova.Data.Connection;
 
-public readonly record struct Harm(Step S, Step A, Step T, Step B);
+public readonly record struct Harm(int S, int A, int T, int B);

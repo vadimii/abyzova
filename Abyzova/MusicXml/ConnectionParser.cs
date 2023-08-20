@@ -7,7 +7,7 @@ public class ConnectionParser
 {
     private static readonly DoubleBass DoubleBass = new();
 
-    public ISet<Pair> Parse(IEnumerable<Pack> packs)
+    public ISet<Pair> Parse(params Pack[] packs)
     {
         var result = new HashSet<Pair>();
 
