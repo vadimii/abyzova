@@ -4,17 +4,17 @@ namespace Abyzova.MusicXml;
 
 public class MeasureSplitter
 {
-    public IEnumerable<Group> Split(IEnumerable<Measure> measures)
+    public IEnumerable<Group> Split(IEnumerable<MeasureParts> measures)
     {
         var id = new Id();
-        var group = new List<Measure>();
+        var group = new List<MeasureParts>();
 
         foreach (var measure in measures)
         {
-            var rehearsal = measure.Items.OfType<Direction>().Select(x => x.Value.Rehearsal)
+            var rehearsal = measure.S.Items.OfType<Direction>().Select(x => x.Value.Rehearsal)
                 .FirstOrDefault(x => !string.IsNullOrEmpty(x));
 
-            var caesura = measure.Items.OfType<Note>().Select(x => x.Notations.Articulations.Caesura)
+            var caesura = measure.S.Items.OfType<Note>().Select(x => x.Notations.Articulations.Caesura)
                 .FirstOrDefault(x => x.HasValue);
 
             if (rehearsal is not null)
@@ -25,7 +25,7 @@ public class MeasureSplitter
                 }
 
                 id = new Id(rehearsal);
-                group = new List<Measure>();
+                group = new List<MeasureParts>();
             }
 
             if (caesura.HasValue)
@@ -36,7 +36,7 @@ public class MeasureSplitter
                 }
 
                 id = id with { Caesura = (ushort)(id.Caesura + 1) };
-                group = new List<Measure>();
+                group = new List<MeasureParts>();
             }
 
             group.Add(measure);
@@ -50,5 +50,5 @@ public class MeasureSplitter
 
     public readonly record struct Id(string Rehearsal, int Caesura = 0);
 
-    public readonly record struct Group(Id Id, Measure[] Measures);
+    public readonly record struct Group(Id Id, MeasureParts[] Measures);
 }

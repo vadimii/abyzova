@@ -17,6 +17,11 @@ public class ChordComposer
         return parts.SelectMany(Zip);
     }
 
+    public IEnumerable<Chord> Build(MeasureParts parts)
+    {
+        return Zip(parts);
+    }
+
     private IEnumerable<Chord> Zip(MeasureParts measure)
     {
         var sNotes = measure.S.Items.OfType<Note>();

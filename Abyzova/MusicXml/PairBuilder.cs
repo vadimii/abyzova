@@ -16,7 +16,7 @@ public class PairBuilder
     {
         foreach (var (first, second) in Zip(_chordComposer.Build(parts)))
         {
-            yield return new Pair(first, Chord.Diff(first, second));
+            yield return new Pair(first.Harm(), Chord.Diff(first, second));
         }
     }
 

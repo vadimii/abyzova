@@ -7,7 +7,7 @@ public class ConnectionParser
 {
     private static readonly DoubleBass DoubleBass = new();
 
-    public ISet<Pair> Parse(Pack[] packs)
+    public ISet<Pair> Parse(IEnumerable<Pack> packs)
     {
         var result = new HashSet<Pair>();
 
@@ -27,15 +27,10 @@ public class ConnectionParser
     private static IEnumerable<Pair> Load(Pack pack)
     {
         var resource = ScoreResource.Get(pack.Name);
-        var parts = MeasureParts.Create(resource.Parts);
+        var parts = MeasureParts.Create(resource.Parts).ToArray();
 
-        foreach (var type in pack.Preprocess)
-        {
-            if (type == typeof(DoubleBass))
-            {
-                parts = DoubleBass.Unfold(parts);
-            }
-        }
+        parts = pack.Preprocess.Aggregate(parts, (current, type) =>
+            type == typeof(DoubleBass) ? DoubleBass.Unfold(current).ToArray() : parts);
 
         var shifter = new KeyShifter(resource.Parts[0].Measures[0].Attributes!.Value.Key);
         var composer = new ChordComposer(shifter);

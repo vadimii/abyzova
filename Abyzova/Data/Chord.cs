@@ -10,4 +10,9 @@ public readonly record struct Chord(Pitch S, Pitch A, Pitch T, Pitch B)
 
         int Val(Pitch x, Pitch y) => 7 * (y.Octave - x.Octave) + y.Step - x.Step;
     }
+
+    public Harm Harm()
+    {
+        return new Harm(S.Step, A.Step, T.Step, B.Step);
+    }
 }
