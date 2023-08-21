@@ -15,6 +15,7 @@
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="Resources\Abyzova-032-049.xml"/>
+        <EmbeddedResource Include="Resources\Abyzova-038-061.xml"/>
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Abyzova\Abyzova.csproj" />

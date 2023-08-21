@@ -36,7 +36,7 @@ public class ChordComposer
         FillEntries(tNotes, Voice.T);
         FillEntries(bNotes, Voice.B);
 
-        var starts = ranges.Select(x => x.Range.Start).Distinct();
+        var starts = ranges.Select(x => x.Range.Start).Distinct().OrderBy(x => x);
 
         foreach (var start in starts)
         {

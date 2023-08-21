@@ -1,4 +1,5 @@
 ﻿using Abyzova.Data.Connection;
+using Abyzova.MusicXml.Nodes;
 using Abyzova.MusicXml.Preprocess;
 
 namespace Abyzova.MusicXml;
@@ -6,6 +7,7 @@ namespace Abyzova.MusicXml;
 public class ConnectionParser
 {
     private static readonly DoubleBass DoubleBass = new();
+    private static readonly Transposition Transposition = new(Step.F, Step.G);
 
     public ISet<Pair> Parse(params Pack[] packs)
     {
@@ -29,8 +31,13 @@ public class ConnectionParser
         var resource = ScoreResource.Get(pack.Name);
         var parts = MeasureParts.Create(resource.Parts).ToArray();
 
-        parts = pack.Preprocess.Aggregate(parts, (current, type) =>
-            type == typeof(DoubleBass) ? DoubleBass.Unfold(current).ToArray() : parts);
+        parts = pack.Preprocesses.Aggregate(parts, (current, preprocess) =>
+            preprocess switch
+            {
+                Pack.Preprocess.DoubleBass => DoubleBass.Unfold(current).ToArray(),
+                Pack.Preprocess.Transposition => Transposition.Move(current).ToArray(),
+                _ => parts
+            });
 
         var shifter = new KeyShifter(resource.Parts[0].Measures[0].Attributes!.Value.Key);
         var composer = new ChordComposer(shifter);
