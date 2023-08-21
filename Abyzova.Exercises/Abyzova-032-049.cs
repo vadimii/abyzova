@@ -17,9 +17,7 @@ public class Abyzova032049
         var musicParser = new MusicParser();
 
         Connections = connectionParser.Parse(Pack.Triads_Ⅰ_Ⅳ_Ⅴ);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score))
-            .Where(x => x.Rehearsal != "3") // TODO (vadimii): Fix It!
-            .ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
     }
 
     [TestCaseSource(nameof(ScoreMusic))]
