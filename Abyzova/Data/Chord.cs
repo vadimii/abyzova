@@ -11,15 +11,8 @@ public readonly record struct Chord(Pitch S, Pitch A, Pitch T, Pitch B)
         int Val(Pitch x, Pitch y) => 7 * (y.Octave - x.Octave) + y.Step - x.Step;
     }
 
-    public bool IsBassOnly(Chord rhs)
-    {
-        return (S, A, T) == (rhs.S, rhs.A, rhs.T) && B != rhs.B;
-    }
-
     public Harm Harm()
     {
         return new Harm((int)S.Step, (int)A.Step, (int)T.Step, (int)B.Step);
     }
-
-
 }

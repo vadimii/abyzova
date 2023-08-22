@@ -24,15 +24,33 @@ public class DoubleBass
 
     private static IEnumerable<MeasureParts> Unfold(MeasureParts parts)
     {
-        var list = parts.B.Items.ToList();
-        var chordIndex = list.FindIndex(x => x is Note { Chord: not null });
-        var chordNote = (Note)list[chordIndex];
-        list.Remove(chordNote);
+        var replaceIndex = -1;
+        var chordNotes = new List<Note>();
+        var items = new List<object>(parts.B.Items);
 
-        yield return parts with { B = parts.B with { Items = list.ToArray() } };
+        foreach (var (item, i) in parts.B.Items.Select((x, i) => (x, i)))
+        {
+            if (item is not Note { Chord: not null } note)
+            {
+                continue;
+            }
 
-        list[chordIndex - 1] = chordNote with { Chord = default };
+            if (replaceIndex == -1)
+            {
+                replaceIndex = i - 1;
+            }
 
-        yield return parts with { B = parts.B with { Items = list.ToArray() } };
+            items.Remove(item);
+            chordNotes.Add(note with { Chord = null });
+        }
+
+        yield return parts with { B = parts.B with { Items = items.ToArray() } };
+
+        foreach (var note in chordNotes)
+        {
+            items[replaceIndex] = note;
+
+            yield return parts with { B = parts.B with { Items = items.ToArray() } };
+        }
     }
 }

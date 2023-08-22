@@ -26,13 +26,14 @@ public class ChordComposerTests
     public void Build_TriadPosition_ShouldPass()
     {
         var resource = ScoreResource.Get("Abyzova-038-061.xml", typeof(ChordComposer).Assembly);
+        var doubleBass = new DoubleBass();
         var transposition = new Transposition(Step.F, Step.G);
-        var parts = transposition.Move(MeasureParts.Create(resource.Parts));
+        var parts = transposition.Move(doubleBass.Unfold(MeasureParts.Create(resource.Parts)));
         var shifter = new KeyShifter(resource.Parts[0].Measures[0].Attributes!.Value.Key);
         var composer = new ChordComposer(shifter);
 
         var actual = composer.Build(parts).ToList();
 
-        actual.Should().HaveCount(144);
+        actual.Should().HaveCount(438);
     }
 }

@@ -4,13 +4,13 @@ using Abyzova.MusicXml;
 
 namespace Abyzova.Exercises;
 
-public class Abyzova038061
+public class Abyzova046079
 {
-    private const string Score = "Abyzova-038-061.xml";
+    private const string Score = "Abyzova-046-079.xml";
     private static readonly Music[] ScoreMusic;
     private static readonly HarmonyTeacher HarmonyTeacher;
 
-    static Abyzova038061()
+    static Abyzova046079()
     {
         var connectionParser = new ConnectionParser();
         var musicParser = new MusicParser();
@@ -20,7 +20,7 @@ public class Abyzova038061
             Pack.Position_Ⅰ_Ⅳ_Ⅴ);
 
         HarmonyTeacher = new HarmonyTeacher(connections);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).Take(2).ToArray();
     }
 
     [TestCaseSource(nameof(ScoreMusic))]

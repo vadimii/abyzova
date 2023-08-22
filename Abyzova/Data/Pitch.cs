@@ -12,6 +12,11 @@ public readonly record struct Pitch(Step Step, int Octave)
         return lhs.Octave < rhs.Octave;
     }
 
+    public static bool operator <=(Pitch lhs, Pitch rhs)
+    {
+        return lhs < rhs || lhs == rhs;
+    }
+
     public static bool operator >(Pitch lhs, Pitch rhs)
     {
         if (lhs.Octave == rhs.Octave)
@@ -20,5 +25,10 @@ public readonly record struct Pitch(Step Step, int Octave)
         }
 
         return lhs.Octave > rhs.Octave;
+    }
+
+    public static bool operator >=(Pitch lhs, Pitch rhs)
+    {
+        return lhs > rhs || lhs == rhs;
     }
 }

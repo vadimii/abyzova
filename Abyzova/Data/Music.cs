@@ -1,3 +1,4 @@
-﻿namespace Abyzova.Data;
+﻿// ReSharper disable NotAccessedPositionalProperty.Global
+namespace Abyzova.Data;
 
 public readonly record struct Music(string Name, string Rehearsal, int Caesura, Unit[] Units);
