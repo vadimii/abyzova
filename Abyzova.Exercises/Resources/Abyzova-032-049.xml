@@ -1466,6 +1466,9 @@
 				<type>half</type>
 				<dot />
 			</note>
+			<barline location="right">
+				<bar-style>light-light</bar-style>
+			</barline>
 		</measure>
 		<measure number="58">
 			<attributes>
@@ -3074,6 +3077,9 @@
 				<type>half</type>
 				<dot />
 			</note>
+			<barline location="right">
+				<bar-style>light-light</bar-style>
+			</barline>
 		</measure>
 		<measure number="58">
 			<attributes>
@@ -4780,6 +4786,9 @@
 				<type>half</type>
 				<dot />
 			</note>
+			<barline location="right">
+				<bar-style>light-light</bar-style>
+			</barline>
 		</measure>
 		<measure number="58">
 			<attributes>
@@ -6494,6 +6503,9 @@
 				<type>half</type>
 				<dot />
 			</note>
+			<barline location="right">
+				<bar-style>light-light</bar-style>
+			</barline>
 		</measure>
 		<measure number="58">
 			<attributes>
