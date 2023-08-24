@@ -20,6 +20,10 @@
         <EmbeddedResource Include="Resources\Abyzova-046-079.xml"/>
     </ItemGroup>
     <ItemGroup>
+        <None Remove="Resources\Audio\**" />
+        <None Remove="Resources\Piano\*.pdf" />
+    </ItemGroup>
+    <ItemGroup>
       <ProjectReference Include="..\Abyzova\Abyzova.csproj" />
     </ItemGroup>
 </Project>
