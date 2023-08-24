@@ -8,7 +8,7 @@ public readonly record struct Chord(Pitch S, Pitch A, Pitch T, Pitch B)
     {
         return new Diff(Val(lhs.S, rhs.S), Val(lhs.A, rhs.A), Val(lhs.T, rhs.T), Val(lhs.B, rhs.B));
 
-        int Val(Pitch x, Pitch y) => 7 * (y.Octave - x.Octave) + y.Step - x.Step;
+        int Val(Pitch x, Pitch y) => y.Abs() - x.Abs();
     }
 
     public Harm Harm()

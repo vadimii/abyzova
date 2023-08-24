@@ -31,4 +31,9 @@ public readonly record struct Pitch(Step Step, int Octave)
     {
         return lhs > rhs || lhs == rhs;
     }
+
+    public int Abs()
+    {
+        return Octave * 7 + (int)Step;
+    }
 }

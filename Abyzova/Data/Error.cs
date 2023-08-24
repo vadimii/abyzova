@@ -6,5 +6,8 @@ public readonly record struct ErrorEntry(ErrorType Error, Unit Unit);
 public enum ErrorType
 {
     Connection,
-    VoiceLeading
+    Overlapping,
+    Parallel,
+    Crossing,
+    BassTenorGap
 }
