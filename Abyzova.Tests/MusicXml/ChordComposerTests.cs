@@ -17,7 +17,7 @@ public class ChordComposerTests
         var shifter = new KeyShifter(resource.Parts[0].Measures[0].Attributes!.Value.Key);
         var composer = new ChordComposer(shifter);
 
-        var actual = composer.Build(parts).ToList();
+        var actual = parts.SelectMany(composer.Build);
 
         actual.Should().HaveCount(164);
     }
@@ -32,7 +32,7 @@ public class ChordComposerTests
         var shifter = new KeyShifter(resource.Parts[0].Measures[0].Attributes!.Value.Key);
         var composer = new ChordComposer(shifter);
 
-        var actual = composer.Build(parts).ToList();
+        var actual = parts.SelectMany(composer.Build);
 
         actual.Should().HaveCount(438);
     }

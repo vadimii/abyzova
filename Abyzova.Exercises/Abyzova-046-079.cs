@@ -20,7 +20,7 @@ public class Abyzova046079
             Pack.Position_Ⅰ_Ⅳ_Ⅴ);
 
         HarmonyTeacher = new HarmonyTeacher(connections);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).Take(2).ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).Take(6).ToArray();
     }
 
     [TestCaseSource(nameof(ScoreMusic))]

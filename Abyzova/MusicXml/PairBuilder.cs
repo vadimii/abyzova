@@ -14,7 +14,7 @@ public class PairBuilder
 
     public IEnumerable<Pair> Build(IEnumerable<MeasureParts> parts)
     {
-        foreach (var (first, second) in Zip(_chordComposer.Build(parts)))
+        foreach (var (first, second) in Zip(parts.SelectMany(_chordComposer.Build)))
         {
             yield return new Pair(first.Harm(), Chord.Diff(first, second));
         }

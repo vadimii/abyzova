@@ -12,17 +12,7 @@ public class ChordComposer
         _shifter = shifter;
     }
 
-    public IEnumerable<Chord> Build(IEnumerable<MeasureParts> parts)
-    {
-        return parts.SelectMany(Zip);
-    }
-
-    public IEnumerable<Chord> Build(MeasureParts parts)
-    {
-        return Zip(parts);
-    }
-
-    private IEnumerable<Chord> Zip(MeasureParts measure)
+    public IEnumerable<Chord> Build(MeasureParts measure)
     {
         var sNotes = measure.S.Items.OfType<Note>();
         var aNotes = measure.A.Items.OfType<Note>();
