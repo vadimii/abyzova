@@ -21,7 +21,7 @@ public class Abyzova055102
             Pack.Position_Thirds_Ⅰ_Ⅳ_Ⅴ);
 
         HarmonyTeacher = new HarmonyTeacher(connections);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).Take(1).ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).Take(5).ToArray();
 
         ScoreMusic[0] = ScoreMusic[0] with { Units = ScoreMusic[0].Units[..^1] };
     }
