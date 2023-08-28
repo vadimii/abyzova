@@ -5580,21 +5580,12 @@
 				<pitch>
 					<step>E</step>
 					<alter>-1</alter>
-					<octave>3</octave>
-				</pitch>
-				<duration>384</duration>
-				<voice>1</voice>
-				<type>half</type>
-			</note>
-			<note>
-				<pitch>
-					<step>E</step>
-					<alter>-1</alter>
 					<octave>2</octave>
 				</pitch>
-				<duration>192</duration>
+				<duration>576</duration>
 				<voice>1</voice>
-				<type>quarter</type>
+				<type>half</type>
+				<dot />
 			</note>
 		</measure>
 		<measure number="28">

@@ -15,7 +15,9 @@ public class Abyzova032049
         var connectionParser = new ConnectionParser();
         var musicParser = new MusicParser();
 
-        var connections = connectionParser.Parse(Pack.Triads_Ⅰ_Ⅳ_Ⅴ);
+        var connections = connectionParser.Parse(
+            Pack.Triads_Ⅰ_Ⅳ_Ⅴ,
+            Pack.Position_Ⅰ_Ⅳ_Ⅴ); // TODO (vadimii): m.33
         HarmonyTeacher = new HarmonyTeacher(connections);
         ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
     }

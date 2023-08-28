@@ -11,6 +11,30 @@ public class VoiceLeading
         return err.HasValue ? new ErrorEntry(err.Value, lhs) : null;
     }
 
+    public ErrorEntry? Check(Unit first, Unit second, Unit third)
+    {
+        if (first == default)
+        {
+            return null;
+        }
+
+        // TODO (vadimii): Research
+        // if (!first.Chord.IsHarmConnected(second.Chord) ||
+        //     !second.Chord.IsHarmConnected(third.Chord))
+        // {
+        //     return null;
+        // }
+
+        var step1 = Chord.Diff(first.Chord, second.Chord).B;
+        var step2 = Chord.Diff(second.Chord, third.Chord).B;
+
+        var abs = Math.Abs(step1);
+
+        return step1 == step2 && abs is 3 or 4 // two fourths or two fifths
+            ? new ErrorEntry(ErrorType.SeventhInBass, first)
+            : null;
+    }
+
     private static ErrorType? Overlapping(Chord lhs, Chord rhs)
     {
         return lhs.B > rhs.T || lhs.T < rhs.B ||

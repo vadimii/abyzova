@@ -15,4 +15,9 @@ public readonly record struct Chord(Pitch S, Pitch A, Pitch T, Pitch B)
     {
         return new Harm((int)S.Step, (int)A.Step, (int)T.Step, (int)B.Step);
     }
+
+    public bool IsHarmConnected(Chord chord)
+    {
+        return S == chord.S || A == chord.A || T == chord.T;
+    }
 }

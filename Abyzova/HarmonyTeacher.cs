@@ -16,6 +16,8 @@ public class HarmonyTeacher
 
     public IEnumerable<ErrorEntry> Check(Music music)
     {
+        var third = default(Unit);
+
         foreach (var (lhs, rhs) in music.Units.Zip(music.Units.Skip(1)))
         {
             if (ChordStructure.Check(lhs) is { } chordStructureError)
@@ -27,6 +29,13 @@ public class HarmonyTeacher
             {
                 yield return voiceLeadingError;
             }
+
+            if (VoiceLeading.Check(third, lhs, rhs) is { } voiceLeadingError2)
+            {
+                yield return voiceLeadingError2;
+            }
+
+            third = lhs;
 
             var pair = new Pair(lhs.Chord.Harm(), Chord.Diff(lhs.Chord, rhs.Chord));
 

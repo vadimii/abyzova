@@ -9,5 +9,6 @@ public enum ErrorType
     Overlapping,
     Parallel,
     Crossing,
-    BassTenorGap
+    BassTenorGap,
+    SeventhInBass
 }
