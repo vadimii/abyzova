@@ -1462,31 +1462,73 @@
 				</direction-type>
 			</direction>
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="48">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>576</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+				<dot />
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>1</voice>
+				<type>quarter</type>
 			</note>
 		</measure>
 		<measure number="49">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>F</step>
+					<alter>1</alter>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<alter>1</alter>
+					<octave>5</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="50">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -1494,31 +1536,81 @@
 		</measure>
 		<measure number="51">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>F</step>
+					<alter>1</alter>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="52">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>1</voice>
+				<type>quarter</type>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>1</voice>
+				<type>quarter</type>
 			</note>
 		</measure>
 		<measure number="53">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>A</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>C</step>
+					<alter>1</alter>
+					<octave>5</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="54">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>D</step>
+					<octave>5</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -2938,7 +3030,10 @@
 				</time>
 			</attributes>
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -2946,7 +3041,11 @@
 		</measure>
 		<measure number="48">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>C</step>
+					<alter>1</alter>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -2954,15 +3053,30 @@
 		</measure>
 		<measure number="49">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="50">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -2970,23 +3084,49 @@
 		</measure>
 		<measure number="51">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
+				<tie type="start" />
 				<voice>1</voice>
 				<type>whole</type>
+				<notations>
+					<tied type="start" />
+				</notations>
 			</note>
 		</measure>
 		<measure number="52">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
+				<tie type="stop" />
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+				<notations>
+					<tied type="stop" />
+				</notations>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="53">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>E</step>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -2994,7 +3134,11 @@
 		</measure>
 		<measure number="54">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>F</step>
+					<alter>1</alter>
+					<octave>4</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -4394,31 +4538,72 @@
 				</time>
 			</attributes>
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>F</step>
+					<alter>1</alter>
+					<octave>3</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="48">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>E</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>576</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+				<dot />
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>192</duration>
+				<tie type="start" />
+				<voice>1</voice>
+				<type>quarter</type>
+				<notations>
+					<tied type="start" />
+				</notations>
 			</note>
 		</measure>
 		<measure number="49">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
 				<duration>768</duration>
+				<tie type="stop" />
 				<voice>1</voice>
 				<type>whole</type>
+				<notations>
+					<tied type="stop" />
+				</notations>
 			</note>
 		</measure>
 		<measure number="50">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>F</step>
+					<alter>1</alter>
+					<octave>3</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
@@ -4426,31 +4611,72 @@
 		</measure>
 		<measure number="51">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>G</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="52">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>B</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>576</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+				<dot />
+			</note>
+			<note>
+				<pitch>
+					<step>D</step>
+					<octave>4</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>1</voice>
+				<type>quarter</type>
 			</note>
 		</measure>
 		<measure number="53">
 			<note>
-				<rest measure="yes" />
-				<duration>768</duration>
+				<pitch>
+					<step>C</step>
+					<alter>1</alter>
+					<octave>4</octave>
+				</pitch>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>whole</type>
+				<type>half</type>
+			</note>
+			<note>
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
+				<duration>384</duration>
+				<voice>1</voice>
+				<type>half</type>
 			</note>
 		</measure>
 		<measure number="54">
 			<note>
-				<rest measure="yes" />
+				<pitch>
+					<step>A</step>
+					<octave>3</octave>
+				</pitch>
 				<duration>768</duration>
 				<voice>1</voice>
 				<type>whole</type>
