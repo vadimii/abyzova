@@ -6078,9 +6078,18 @@
 					<step>B</step>
 					<octave>3</octave>
 				</pitch>
-				<duration>384</duration>
+				<duration>192</duration>
 				<voice>1</voice>
-				<type>half</type>
+				<type>quarter</type>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>1</voice>
+				<type>quarter</type>
 			</note>
 		</measure>
 		<measure number="39">
@@ -6090,19 +6099,9 @@
 					<alter>1</alter>
 					<octave>3</octave>
 				</pitch>
-				<duration>192</duration>
+				<duration>384</duration>
 				<voice>1</voice>
-				<type>quarter</type>
-			</note>
-			<note>
-				<pitch>
-					<step>F</step>
-					<alter>1</alter>
-					<octave>2</octave>
-				</pitch>
-				<duration>192</duration>
-				<voice>1</voice>
-				<type>quarter</type>
+				<type>half</type>
 			</note>
 			<note>
 				<pitch>

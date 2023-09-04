@@ -2668,7 +2668,7 @@
 			<note>
 				<pitch>
 					<step>A</step>
-					<octave>2</octave>
+					<octave>3</octave>
 				</pitch>
 				<duration>384</duration>
 				<voice>4</voice>
@@ -2688,7 +2688,7 @@
 			<note>
 				<pitch>
 					<step>G</step>
-					<octave>2</octave>
+					<octave>3</octave>
 				</pitch>
 				<duration>192</duration>
 				<voice>4</voice>
@@ -2740,7 +2740,7 @@
 			<note>
 				<pitch>
 					<step>A</step>
-					<octave>2</octave>
+					<octave>3</octave>
 				</pitch>
 				<duration>768</duration>
 				<voice>4</voice>
@@ -3262,9 +3262,19 @@
 					<step>B</step>
 					<octave>3</octave>
 				</pitch>
-				<duration>384</duration>
+				<duration>192</duration>
 				<voice>4</voice>
-				<type>half</type>
+				<type>quarter</type>
+				<staff>2</staff>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>4</voice>
+				<type>quarter</type>
 				<staff>2</staff>
 			</note>
 		</measure>
@@ -3606,7 +3616,7 @@
 				<pitch>
 					<step>C</step>
 					<alter>1</alter>
-					<octave>3</octave>
+					<octave>4</octave>
 				</pitch>
 				<duration>384</duration>
 				<voice>4</voice>
@@ -3724,9 +3734,19 @@
 					<step>B</step>
 					<octave>3</octave>
 				</pitch>
-				<duration>384</duration>
+				<duration>192</duration>
 				<voice>4</voice>
-				<type>half</type>
+				<type>quarter</type>
+				<staff>2</staff>
+			</note>
+			<note>
+				<pitch>
+					<step>B</step>
+					<octave>2</octave>
+				</pitch>
+				<duration>192</duration>
+				<voice>4</voice>
+				<type>quarter</type>
 				<staff>2</staff>
 			</note>
 		</measure>
@@ -5636,7 +5656,7 @@
 				<pitch>
 					<step>B</step>
 					<alter>-1</alter>
-					<octave>3</octave>
+					<octave>2</octave>
 				</pitch>
 				<duration>192</duration>
 				<voice>4</voice>
@@ -5717,7 +5737,7 @@
 			<note>
 				<pitch>
 					<step>F</step>
-					<octave>3</octave>
+					<octave>2</octave>
 				</pitch>
 				<duration>384</duration>
 				<voice>4</voice>
@@ -5979,7 +5999,7 @@
 				<pitch>
 					<step>B</step>
 					<alter>-1</alter>
-					<octave>3</octave>
+					<octave>2</octave>
 				</pitch>
 				<duration>192</duration>
 				<voice>4</voice>
@@ -5989,7 +6009,7 @@
 			<note>
 				<pitch>
 					<step>F</step>
-					<octave>3</octave>
+					<octave>2</octave>
 				</pitch>
 				<duration>192</duration>
 				<voice>4</voice>
