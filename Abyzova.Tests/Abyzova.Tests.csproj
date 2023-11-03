@@ -16,6 +16,7 @@
         <PackageReference Include="coverlet.collector" Version="3.1.2"/>
     </ItemGroup>
     <ItemGroup>
+        <ProjectReference Include="..\Abyzova.Reader\Abyzova.Reader.csproj" />
         <ProjectReference Include="..\Abyzova\Abyzova.csproj"/>
     </ItemGroup>
     <ItemGroup>

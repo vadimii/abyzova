@@ -2,16 +2,16 @@
 
 namespace Abyzova;
 
-public class VoiceLeading
+public static class VoiceLeading
 {
-    public ErrorEntry? Check(Unit lhs, Unit rhs)
+    public static SignalPoint? Check(Unit lhs, Unit rhs)
     {
         var err = Overlapping(lhs.Chord, rhs.Chord) ?? Parallel(lhs.Chord, rhs.Chord);
 
-        return err.HasValue ? new ErrorEntry(err.Value, lhs) : null;
+        return err.HasValue ? new SignalPoint(err.Value, lhs) : null;
     }
 
-    public ErrorEntry? Check(Unit first, Unit second, Unit third)
+    public static SignalPoint? Check(Unit first, Unit second, Unit third)
     {
         if (first == default)
         {
@@ -31,24 +31,24 @@ public class VoiceLeading
         var abs = Math.Abs(step1);
 
         return step1 == step2 && abs is 3 or 4 // two fourths or two fifths
-            ? new ErrorEntry(ErrorType.SeventhInBass, first)
+            ? new SignalPoint(Signal.SeventhInBass, first)
             : null;
     }
 
-    private static ErrorType? Overlapping(Chord lhs, Chord rhs)
+    private static Signal? Overlapping(Chord lhs, Chord rhs)
     {
         return lhs.B > rhs.T || lhs.T < rhs.B ||
                lhs.T > rhs.A || lhs.A < rhs.T ||
                lhs.A > rhs.S || lhs.S < rhs.A
-            ? ErrorType.Overlapping
+            ? Signal.Overlapping
             : null;
     }
 
-    private static ErrorType? Parallel(Chord lhs, Chord rhs)
+    private static Signal? Parallel(Chord lhs, Chord rhs)
     {
         return (lhs.S < rhs.S && lhs.A < rhs.A && lhs.T < rhs.T && lhs.B < rhs.B) ||
                (lhs.S > rhs.S && lhs.A > rhs.A && lhs.T > rhs.T && lhs.B > rhs.B)
-               ? ErrorType.Parallel
+               ? Signal.Parallel
                : null;
     }
 }

@@ -1,6 +1,6 @@
 using Abyzova.Data;
-using Abyzova.Data.Connection;
-using Abyzova.MusicXml;
+using Abyzova.Reader;
+using Abyzova.Reader.MusicXml;
 
 namespace Abyzova.Exercises;
 
@@ -16,8 +16,8 @@ public class Abyzova032049
         var musicParser = new MusicParser();
 
         var connections = connectionParser.Parse(
-            Pack.Triads_Ⅰ_Ⅳ_Ⅴ,
-            Pack.Position_Ⅰ_Ⅳ_Ⅴ); // TODO (vadimii): m.33
+            Pack.MainTriad,
+            Pack.MainTriadRepetition); // TODO (vadimii): m.33
         HarmonyTeacher = new HarmonyTeacher(connections);
         ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
     }

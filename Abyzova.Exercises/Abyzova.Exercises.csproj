@@ -25,6 +25,7 @@
         <None Remove="Resources\Piano\*.pdf" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\Abyzova.Reader\Abyzova.Reader.csproj" />
       <ProjectReference Include="..\Abyzova\Abyzova.csproj" />
     </ItemGroup>
 </Project>

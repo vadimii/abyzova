@@ -1,6 +1,6 @@
-﻿using Abyzova.MusicXml;
-using Abyzova.MusicXml.Nodes;
-using Abyzova.MusicXml.Preprocess;
+﻿using Abyzova.Reader.MusicXml;
+using Abyzova.Reader.MusicXml.Nodes;
+using Abyzova.Reader.MusicXml.Preprocess;
 using FluentAssertions;
 
 namespace Abyzova.Tests.MusicXml;

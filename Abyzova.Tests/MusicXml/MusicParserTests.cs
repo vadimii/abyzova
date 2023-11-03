@@ -1,4 +1,4 @@
-﻿using Abyzova.MusicXml;
+﻿using Abyzova.Reader.MusicXml;
 using FluentAssertions;
 
 namespace Abyzova.Tests.MusicXml;

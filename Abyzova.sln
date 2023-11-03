@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzova.Tests", "Abyzova.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzova.Exercises", "Abyzova.Exercises\Abyzova.Exercises.csproj", "{97534736-204B-45C9-A87C-9B48F57C7954}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abyzova.Reader", "Abyzova.Reader\Abyzova.Reader.csproj", "{8EA798D7-FDAB-4406-B5B0-8719EC254B7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{97534736-204B-45C9-A87C-9B48F57C7954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97534736-204B-45C9-A87C-9B48F57C7954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97534736-204B-45C9-A87C-9B48F57C7954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA798D7-FDAB-4406-B5B0-8719EC254B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA798D7-FDAB-4406-B5B0-8719EC254B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA798D7-FDAB-4406-B5B0-8719EC254B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA798D7-FDAB-4406-B5B0-8719EC254B7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

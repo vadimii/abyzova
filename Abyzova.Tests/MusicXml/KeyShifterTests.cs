@@ -1,5 +1,5 @@
-﻿using Abyzova.MusicXml;
-using Abyzova.MusicXml.Nodes;
+﻿using Abyzova.Reader.MusicXml;
+using Abyzova.Reader.MusicXml.Nodes;
 using AutoFixture;
 using FluentAssertions;
 using ModelStep = Abyzova.Data.Step;

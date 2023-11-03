@@ -1,5 +1,6 @@
 ﻿using Abyzova.Data.Connection;
-using Abyzova.MusicXml;
+using Abyzova.Reader;
+using Abyzova.Reader.MusicXml;
 using FluentAssertions;
 
 namespace Abyzova.Tests.MusicXml;
@@ -12,7 +13,7 @@ public class ConnectionParserTests
     {
         var parser = new ConnectionParser();
 
-        var actual = parser.Parse(Pack.Triads_Ⅰ_Ⅳ_Ⅴ);
+        var actual = parser.Parse(Pack.MainTriad);
 
         actual.Should().HaveCount(82);
     }

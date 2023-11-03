@@ -2,26 +2,26 @@
 
 namespace Abyzova;
 
-public class ChordStructure
+public static class ChordStructure
 {
-    public ErrorEntry? Check(Unit unit)
+    public static SignalPoint? Check(Unit unit)
     {
-        var err = Crossing(unit.Chord) ?? BassTenorGap(unit.Chord);
+        var signal = Crossing(unit.Chord) ?? BassTenorGap(unit.Chord);
 
-        return err.HasValue ? new ErrorEntry(err.Value, unit) : null;
+        return signal.HasValue ? new SignalPoint(signal.Value, unit) : null;
     }
 
-    private static ErrorType? Crossing(Chord chord)
+    private static Signal? Crossing(Chord chord)
     {
         return chord.B > chord.T || chord.T > chord.A || chord.A > chord.S
-            ? ErrorType.Crossing
+            ? Signal.Crossing
             : null;
     }
 
-    private static ErrorType? BassTenorGap(Chord chord)
+    private static Signal? BassTenorGap(Chord chord)
     {
         return chord.T.Abs() - chord.B.Abs() > 14
-            ? ErrorType.BassTenorGap
+            ? Signal.BassTenorGap
             : null;
     }
 }

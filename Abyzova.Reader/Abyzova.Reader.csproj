@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\Abyzova-032-049.xml" />
+      <EmbeddedResource Include="Resources\Abyzova-038-061.xml" />
+      <EmbeddedResource Include="Resources\Abyzova-055-102.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Abyzova\Abyzova.csproj" />
+    </ItemGroup>
+
+</Project>

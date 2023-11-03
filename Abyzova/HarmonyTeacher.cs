@@ -5,8 +5,6 @@ namespace Abyzova;
 
 public class HarmonyTeacher
 {
-    private static readonly ChordStructure ChordStructure = new();
-    private static readonly VoiceLeading VoiceLeading = new();
     private readonly ISet<Pair> _connections;
 
     public HarmonyTeacher(ISet<Pair> connections)
@@ -14,25 +12,25 @@ public class HarmonyTeacher
         _connections = connections;
     }
 
-    public IEnumerable<ErrorEntry> Check(Music music)
+    public IEnumerable<SignalPoint> Check(Music music)
     {
         var third = default(Unit);
 
         foreach (var (lhs, rhs) in music.Units.Zip(music.Units.Skip(1)))
         {
-            if (ChordStructure.Check(lhs) is { } chordStructureError)
+            if (ChordStructure.Check(lhs) is { } chordStructureSignal)
             {
-                yield return chordStructureError;
+                yield return chordStructureSignal;
             }
 
-            if (VoiceLeading.Check(lhs, rhs) is { } voiceLeadingError)
+            if (VoiceLeading.Check(lhs, rhs) is { } voiceLeadingSignal)
             {
-                yield return voiceLeadingError;
+                yield return voiceLeadingSignal;
             }
 
-            if (VoiceLeading.Check(third, lhs, rhs) is { } voiceLeadingError2)
+            if (VoiceLeading.Check(third, lhs, rhs) is { } voiceLeadingSignal2)
             {
-                yield return voiceLeadingError2;
+                yield return voiceLeadingSignal2;
             }
 
             third = lhs;
@@ -41,7 +39,7 @@ public class HarmonyTeacher
 
             if (!_connections.Contains(pair))
             {
-                yield return new ErrorEntry(ErrorType.Connection, lhs);
+                yield return new SignalPoint(Signal.Connection, lhs);
             }
         }
     }
