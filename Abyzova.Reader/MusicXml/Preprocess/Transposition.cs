@@ -49,7 +49,8 @@ public class Transposition
             Pitch = new Pitch
             {
                 Step = (Step)(res % mod),
-                Octave = note.Pitch.Octave + (mod > res ? 0 : 1)
+                Octave = note.Pitch.Octave + (mod > res ? 0 : 1),
+                Alter = 0 // not supported yet
             }
         };
     }

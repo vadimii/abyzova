@@ -37,7 +37,7 @@ public class KeyShifterTests
         var key = new Key { Mode = keyMode, Fifths = fifths };
         var shifter = new KeyShifter(key);
 
-        var actual = shifter.Step(new Pitch{Step = step, Octave = 1});
+        var actual = shifter.Step(new Pitch{Step = step, Octave = 1, Alter = 0});
 
         actual.Step.Should().Be(result);
     }

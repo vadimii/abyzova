@@ -9,4 +9,7 @@ public readonly record struct Pitch
 
     [XmlElement("octave")]
     public required int Octave { get; init; }
+
+    [XmlElement("alter")]
+    public required int Alter { get; init; }
 }
