@@ -10,25 +10,26 @@ namespace Abyzova.Reader.LilyPond;
 
 public partial class MusicParser
 {
-    public Music Parse(string raw)
+    public Music Parse(string raw, int? limit = null)
     {
         var voices = SplitVoices(raw);
 
         var key = GetKey(voices[0]);
         var shifter = new KeyShifter(key);
         var composer = new ChordComposer(shifter);
+        var take = limit.GetValueOrDefault(int.MaxValue);
 
-        var sop = ParseVoice(voices[1].Split("|"), 5);
-        var alt = ParseVoice(voices[2].Split("|"), 4);
-        var ten = ParseVoice(voices[3].Split("|"), 4);
-        var bas = ParseVoice(voices[4].Split("|"), 3);
+        var sop = ParseVoice(voices[1].Split("|").Take(take), 5);
+        var alt = ParseVoice(voices[2].Split("|").Take(take), 4);
+        var ten = ParseVoice(voices[3].Split("|").Take(take), 4);
+        var bas = ParseVoice(voices[4].Split("|").Take(take), 3);
 
         var units = new List<Unit>();
 
         foreach (var (measure, i) in ZipIterator(sop, alt, ten, bas).Select((x, i) => (x, i)))
         {
             var chords = composer.Build(measure.First, measure.Second, measure.Third, measure.Fourth);
-            units.AddRange(chords.Select(x => new Unit(i + 1, 1, x)));
+            units.AddRange(chords.Select((x, j) => new Unit(i + 1, j + 1, x)));
         }
 
         return new Music("LilyPond", "1", 0, units.ToArray());
