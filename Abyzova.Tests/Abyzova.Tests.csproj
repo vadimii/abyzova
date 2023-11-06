@@ -22,5 +22,7 @@
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="Resources\Abyzova-032-049.xml" />
+      <EmbeddedResource Include="Resources\Abyzova-055-102-1.xml" />
+      <EmbeddedResource Include="Resources\Abyzova-055-102-1.ly" />
     </ItemGroup>
 </Project>

@@ -19,12 +19,19 @@ public class ChordComposer
         var tNotes = measure.T.Items.OfType<Note>();
         var bNotes = measure.B.Items.OfType<Note>();
 
+        return Build(sNotes, aNotes, tNotes, bNotes);
+    }
+
+    public IEnumerable<Chord> Build(
+        IEnumerable<Note> soprano, IEnumerable<Note> alt,
+        IEnumerable<Note> tenor, IEnumerable<Note> bass)
+    {
         var ranges = new List<Entry>();
 
-        FillEntries(sNotes, Voice.S);
-        FillEntries(aNotes, Voice.A);
-        FillEntries(tNotes, Voice.T);
-        FillEntries(bNotes, Voice.B);
+        FillEntries(soprano, Voice.S);
+        FillEntries(alt, Voice.A);
+        FillEntries(tenor, Voice.T);
+        FillEntries(bass, Voice.B);
 
         var starts = ranges.Select(x => x.Range.Start).Distinct().OrderBy(x => x);
 

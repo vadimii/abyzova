@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using Abyzova.Reader.MusicXml.Nodes;
 
-namespace Abyzova.Tools.Lilypond;
+namespace Abyzova.Tools.LilyPond;
 
 public static class MusicXmlToLilyPond
 {
@@ -104,7 +104,7 @@ public static class MusicXmlToLilyPond
             { divisions * 2, "2" },
             { divisions * 2 + divisions, "2." },
             { divisions * 4, "1" },
-            { divisions * 4 + +divisions * 2, "1." }
+            { divisions * 4 + divisions * 2, "1." }
         };
 
         foreach (var measure in score.Parts[voice].Measures.Skip(start).Take(stop - start))
