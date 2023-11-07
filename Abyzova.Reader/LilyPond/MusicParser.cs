@@ -229,6 +229,11 @@ public partial class MusicParser
         {
             var notes = measure.Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 
+            if (notes.Length > 1 && notes[0] == "\\partial")
+            {
+                notes = notes.Skip(2).ToArray();
+            }
+
             yield return notes.Select(x => GetNote(ParseNote(x), context)).ToArray();
         }
     }
