@@ -12,7 +12,12 @@ public class HarmonyTeacher
         _connections = connections;
     }
 
-    public IEnumerable<SignalPoint> Check(Music music)
+    public IEnumerable<SignalPoint> Check(Music music, bool skipOk = true)
+    {
+        return CheckInternal(music).Where(x => !(skipOk && x.Ok));
+    }
+
+    private IEnumerable<SignalPoint> CheckInternal(Music music)
     {
         var third = default(Unit);
 
@@ -44,7 +49,7 @@ public class HarmonyTeacher
 
             if (!_connections.Contains(pair))
             {
-                yield return new SignalPoint(Signal.Connection, lhs);
+                yield return new SignalPoint(Signal.Connection, lhs, lhs.Ok || rhs.Ok);
             }
         }
     }

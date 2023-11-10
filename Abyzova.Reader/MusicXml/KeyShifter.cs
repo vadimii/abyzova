@@ -27,7 +27,7 @@ public class KeyShifter
         var step = (Data.Step)(n + 1);
         var octave = p < n ? pitch.Octave - 1 : pitch.Octave;
 
-        return new Data.Pitch(step, octave);
+        return new Data.Pitch(step, octave, string.Empty);
     }
 
     private static string ShiftNotes(Key key)

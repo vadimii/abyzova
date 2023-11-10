@@ -1,6 +1,6 @@
 ﻿namespace Abyzova.Data;
 
-public readonly record struct SignalPoint(Signal Signal, Unit Unit);
+public readonly record struct SignalPoint(Signal Signal, Unit Unit, bool Ok);
 
 public enum Signal
 {

@@ -8,7 +8,7 @@ public static class ChordStructure
     {
         var signal = Crossing(unit.Chord) ?? BassTenorGap(unit.Chord);
 
-        return signal.HasValue ? new SignalPoint(signal.Value, unit) : null;
+        return signal.HasValue ? new SignalPoint(signal.Value, unit, unit.Ok) : null;
     }
 
     private static Signal? Crossing(Chord chord)

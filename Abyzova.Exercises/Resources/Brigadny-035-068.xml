@@ -5645,6 +5645,9 @@
 				<duration>192</duration>
 				<voice>1</voice>
 				<type>quarter</type>
+				<notations>
+					<other-notation>✓</other-notation>
+				</notations>
 			</note>
 		</measure>
 		<measure number="48">
@@ -5688,6 +5691,9 @@
 				<duration>192</duration>
 				<voice>1</voice>
 				<type>quarter</type>
+				<notations>
+					<other-notation>✓</other-notation>
+				</notations>
 			</note>
 		</measure>
 		<measure number="50">

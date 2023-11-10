@@ -18,9 +18,7 @@ public class Brigadny035068
         var connections = connectionParser.Parse(Pack.MainTriad);
 
         HarmonyTeacher = new HarmonyTeacher(connections);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score))
-            .Where(x => x.Rehearsal != "10") // TODO (vadimii): handle OK markers
-            .ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
     }
 
     [TestCaseSource(nameof(ScoreMusic))]

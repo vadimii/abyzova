@@ -8,7 +8,7 @@ public static class VoiceLeading
     {
         var err = Overlapping(lhs.Chord, rhs.Chord) ?? Parallel(lhs.Chord, rhs.Chord);
 
-        return err.HasValue ? new SignalPoint(err.Value, lhs) : null;
+        return err.HasValue ? new SignalPoint(err.Value, lhs, lhs.Ok || rhs.Ok) : null;
     }
 
     public static SignalPoint? Check(Unit first, Unit second, Unit third)
@@ -31,7 +31,7 @@ public static class VoiceLeading
         var abs = Math.Abs(step1);
 
         return step1 == step2 && abs is 3 or 4 // two fourths or two fifths
-            ? new SignalPoint(Signal.SeventhInBass, first)
+            ? new SignalPoint(Signal.SeventhInBass, first, first.Ok || second.Ok || third.Ok)
             : null;
     }
 

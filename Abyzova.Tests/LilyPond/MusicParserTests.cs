@@ -41,4 +41,15 @@ public class MusicParserTests
 
         actual.Should().HaveCount(19);
     }
+
+    [Test]
+    public void ParseOkMarkTest()
+    {
+        var source = LilyPondResource.Get("Brigadny-035-068-10.ly");
+        var target = new MusicParser();
+
+        var actual = target.Parse(source).Units.Where(x => x.Ok);
+
+        actual.Should().HaveCount(2);
+    }
 }

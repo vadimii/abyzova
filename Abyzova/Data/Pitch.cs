@@ -1,6 +1,6 @@
 ﻿namespace Abyzova.Data;
 
-public readonly record struct Pitch(Step Step, int Octave)
+public readonly record struct Pitch(Step Step, int Octave, string Tag)
 {
     public static bool operator <(Pitch lhs, Pitch rhs)
     {

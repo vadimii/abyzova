@@ -84,10 +84,12 @@ public class MusicParser
         var leap = match.Groups[3].Value;
         var dur = match.Groups[4].Value;
 
-        return new LilyNote(step, alter, leap, dur);
+        var ok = token.Contains('✓') ? "✓" : string.Empty;
+
+        return new LilyNote(step, alter, leap, dur, ok);
     }
 
-    private record struct LilyNote(string Step, string Alter, string Leap, string Duration);
+    private record struct LilyNote(string Step, string Alter, string Leap, string Duration, string Tag);
 
     private record ParseContext
     {
@@ -198,7 +200,15 @@ public class MusicParser
         var pitch = new Pitch { Step = step, Octave = octave, Alter = alter };
         context.Pitch = pitch;
 
-        return new Note { Pitch = pitch, Notations = default, Duration = duration, Rest = rest };
+        var notations = lily.Tag.Length > 0
+            ? new Notations
+            {
+                Articulations = default,
+                OtherNotation = lily.Tag
+            }
+            : Notations.Empty;
+
+        return new Note { Pitch = pitch, Notations = notations, Duration = duration, Rest = rest };
 
         int CalcOctave(Pitch refPitch, Step nextStep)
         {
