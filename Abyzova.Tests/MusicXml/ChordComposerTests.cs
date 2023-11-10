@@ -1,7 +1,6 @@
 ﻿using Abyzova.Reader.MusicXml;
 using Abyzova.Reader.MusicXml.Nodes;
 using Abyzova.Reader.MusicXml.Preprocess;
-using FluentAssertions;
 
 namespace Abyzova.Tests.MusicXml;
 
@@ -34,6 +33,6 @@ public class ChordComposerTests
 
         var actual = parts.SelectMany(composer.Build);
 
-        actual.Should().HaveCount(438);
+        actual.Should().HaveCount(366);
     }
 }

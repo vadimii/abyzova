@@ -13,16 +13,21 @@ public partial class MusicParser
     public Music Parse(string raw, int? limit = null)
     {
         var voices = SplitVoices(raw);
-
         var key = GetKey(voices[0]);
+
+        return Parse(key, voices.Skip(1).ToArray(), limit);
+    }
+
+    public Music Parse(Key key, string[] voices, int? limit = null)
+    {
         var shifter = new KeyShifter(key);
         var composer = new ChordComposer(shifter);
         var take = limit.GetValueOrDefault(int.MaxValue);
 
-        var sop = ParseVoice(voices[1].Split("|").Take(take), 5);
-        var alt = ParseVoice(voices[2].Split("|").Take(take), 4);
-        var ten = ParseVoice(voices[3].Split("|").Take(take), 4);
-        var bas = ParseVoice(voices[4].Split("|").Take(take), 3);
+        var sop = ParseVoice(voices[0].Split("|").Take(take), 5);
+        var alt = ParseVoice(voices[1].Split("|").Take(take), 4);
+        var ten = ParseVoice(voices[2].Split("|").Take(take), 4);
+        var bas = ParseVoice(voices[3].Split("|").Take(take), 3);
 
         var units = new List<Unit>();
 

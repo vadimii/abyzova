@@ -1,7 +1,5 @@
-﻿using Abyzova.Data.Connection;
-using Abyzova.Reader;
+﻿using Abyzova.Reader;
 using Abyzova.Reader.MusicXml;
-using FluentAssertions;
 
 namespace Abyzova.Tests.MusicXml;
 

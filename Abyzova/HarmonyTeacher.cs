@@ -35,6 +35,11 @@ public class HarmonyTeacher
 
             third = lhs;
 
+            if (ObviousConnection.Pass(lhs, rhs))
+            {
+                continue;
+            }
+
             var pair = new Pair(lhs.Chord.Harm(), Chord.Diff(lhs.Chord, rhs.Chord));
 
             if (!_connections.Contains(pair))

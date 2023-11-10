@@ -1,7 +1,6 @@
 ﻿using Abyzova.Reader.MusicXml;
 using Abyzova.Reader.MusicXml.Nodes;
 using AutoFixture;
-using FluentAssertions;
 using ModelStep = Abyzova.Data.Step;
 
 namespace Abyzova.Tests.MusicXml;

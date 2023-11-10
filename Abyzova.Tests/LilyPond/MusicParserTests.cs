@@ -1,5 +1,4 @@
 ﻿using Abyzova.Tests.MusicXml;
-using FluentAssertions;
 using MusicParser = Abyzova.Reader.LilyPond.MusicParser;
 using XmlMusicParser = Abyzova.Reader.MusicXml.MusicParser;
 
