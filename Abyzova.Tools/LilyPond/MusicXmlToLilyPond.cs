@@ -97,6 +97,8 @@ public static class MusicXmlToLilyPond
         // TODO (vadimii): need to write arithmetic expression
         var durs = new Dictionary<int, string>
         {
+            { divisions / 4, "16" },
+            { divisions / 4 + divisions / 8, "16." },
             { divisions / 2, "8" },
             { divisions / 2 + divisions / 4, "8." },
             { divisions, "4" },

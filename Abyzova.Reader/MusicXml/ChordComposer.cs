@@ -52,11 +52,14 @@ public class ChordComposer
         void FillEntries(IEnumerable<Note> notes, Voice voice)
         {
             var start = 0;
+            var prevNote = default(Note);
 
-            foreach (var note in notes)
+            foreach (var note in notes.SkipWhile(x => x.Rest.HasValue))
             {
-                ranges.Add(new Entry(new Range(start, start + note.Duration), voice, note.Pitch));
+                var pitch = note.Rest.HasValue ? prevNote.Pitch : note.Pitch;
+                ranges.Add(new Entry(new Range(start, start + note.Duration), voice, pitch));
                 start += note.Duration;
+                prevNote = note;
             }
         }
 

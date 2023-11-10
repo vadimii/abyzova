@@ -4,24 +4,23 @@ using Abyzova.Reader.MusicXml;
 
 namespace Abyzova.Exercises;
 
-public class Abyzova055102
+public class Brigadny035068
 {
-    private const string Score = "Abyzova-055-102.xml";
+    private const string Score = "Brigadny-035-068.xml";
     private static readonly Music[] ScoreMusic;
     private static readonly HarmonyTeacher HarmonyTeacher;
 
-    static Abyzova055102()
+    static Brigadny035068()
     {
         var connectionParser = new ConnectionParser();
         var musicParser = new MusicParser();
 
-        var connections = connectionParser.Parse(
-            Pack.MainTriad,
-            Pack.MainTriadRepetition,
-            Pack.MainTriadThirdToneLeap);
+        var connections = connectionParser.Parse(Pack.MainTriad);
 
         HarmonyTeacher = new HarmonyTeacher(connections);
-        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score)).ToArray();
+        ScoreMusic = musicParser.Parse(ScoreResource.Get(Score))
+            .Where(x => x.Rehearsal != "10") // TODO (vadimii): handle OK markers
+            .ToArray();
     }
 
     [TestCaseSource(nameof(ScoreMusic))]

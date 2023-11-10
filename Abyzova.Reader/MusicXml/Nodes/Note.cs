@@ -15,4 +15,7 @@ public readonly record struct Note
 
     [XmlElement("chord")]
     public Chord? Chord { get; init; }
+
+    [XmlElement("rest")]
+    public Rest? Rest { get; init; }
 }

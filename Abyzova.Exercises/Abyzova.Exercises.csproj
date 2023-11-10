@@ -19,10 +19,10 @@
         <EmbeddedResource Include="Resources\Abyzova-038-061.xml"/>
         <EmbeddedResource Include="Resources\Abyzova-046-079.xml"/>
         <EmbeddedResource Include="Resources\Abyzova-055-102.xml"/>
+        <EmbeddedResource Include="Resources\Brigadny-035-068.xml"/>
     </ItemGroup>
     <ItemGroup>
-        <None Remove="Resources\Audio\**" />
-        <None Remove="Resources\Piano\*.pdf" />
+        <None Remove="Resources\Clavier\*.pdf" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Abyzova.Reader\Abyzova.Reader.csproj" />

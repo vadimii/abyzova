@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Text.RegularExpressions;
 using Abyzova.Data;
 using Abyzova.Reader.MusicXml;
 using Abyzova.Reader.MusicXml.Nodes;
@@ -8,7 +7,7 @@ using Step = Abyzova.Reader.MusicXml.Nodes.Step;
 
 namespace Abyzova.Reader.LilyPond;
 
-public partial class MusicParser
+public class MusicParser
 {
     public Music Parse(string raw, int? limit = null)
     {
@@ -43,7 +42,7 @@ public partial class MusicParser
     private static string[] SplitVoices(string raw)
     {
         using var reader = new StringReader(raw);
-        var regex = VoiceRegex();
+        var regex = RegexRepository.VoiceRegex();
         var voices = new string[5];
 
         while (reader.ReadLine() is { } line)
@@ -76,7 +75,7 @@ public partial class MusicParser
 
     private static LilyNote ParseNote(string token)
     {
-        var match = NoteRegex().Match(token);
+        var match = RegexRepository.NoteRegex().Match(token);
 
         Debug.Assert(match.Success);
 
@@ -87,15 +86,6 @@ public partial class MusicParser
 
         return new LilyNote(step, alter, leap, dur);
     }
-
-    [GeneratedRegex(@"^\w+\s*\=\s*{(.+)}")]
-    private static partial Regex VoiceRegex();
-
-    [GeneratedRegex(@"^\s*\\key\s+([cdefgabis]+)\s+\\(major|minor)")]
-    private static partial Regex KeyRegex();
-
-    [GeneratedRegex(@"^([cdefgab])([eis]{0,4}){0,1}([,']){0,1}(\d[\d\.]*){0,1}")]
-    private static partial Regex NoteRegex();
 
     private record struct LilyNote(string Step, string Alter, string Leap, string Duration);
 
@@ -113,7 +103,7 @@ public partial class MusicParser
         var majorFlats = "f bes es as des ges".Split().ToList();
         var minorFlats = "d g c f bes es".Split().ToList();
 
-        var match = KeyRegex().Match(tokens);
+        var match = RegexRepository.KeyRegex().Match(tokens);
 
         Debug.Assert(match.Success);
 
@@ -168,6 +158,8 @@ public partial class MusicParser
         // TODO (vadimii): need to write arithmetic expression
         var durs = new Dictionary<string, int>
         {
+            { "16", divs / 4 },
+            { "16.", divs / 4 + divs / 8 },
             { "8", divs / 2 },
             { "8.", divs / 2 + divs / 4 },
             { "4", divs },
@@ -182,7 +174,10 @@ public partial class MusicParser
 
         var duration = durs[context.Duration];
 
-        var step = Enum.Parse<Step>(lily.Step, true);
+        var rest = lily.Step == "r" ? new Rest() : (Rest?)null;
+        var step = rest.HasValue
+            ? context.Pitch.Step
+            : Enum.Parse<Step>(lily.Step, true);
 
         var alter = lily.Alter switch
         {
@@ -200,10 +195,10 @@ public partial class MusicParser
         };
 
         var octave = CalcOctave(context.Pitch, step) + octaveMod;
-        var pitch = new Pitch { Step = step, Octave = octave, Alter = alter};
+        var pitch = new Pitch { Step = step, Octave = octave, Alter = alter };
         context.Pitch = pitch;
 
-        return new Note { Pitch = pitch, Notations = default, Duration = duration };
+        return new Note { Pitch = pitch, Notations = default, Duration = duration, Rest = rest };
 
         int CalcOctave(Pitch refPitch, Step nextStep)
         {
@@ -239,7 +234,11 @@ public partial class MusicParser
                 notes = notes.Skip(2).ToArray();
             }
 
-            yield return notes.Select(x => GetNote(ParseNote(x), context)).ToArray();
+            yield return notes
+                .Select(ParseNote)
+                .SkipWhile(x => x.Step == "r")
+                .Select(x => GetNote(x, context))
+                .ToArray();
         }
     }
 
